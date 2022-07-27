@@ -10,7 +10,7 @@ public class CalculatingService {
 	
 
 	
-	public int calculateCost(String component, int count) {
+	public Long calculateCost(String component, Long count) {
 		
 		
 		if(component.equals("Integral")) {
@@ -24,14 +24,14 @@ public class CalculatingService {
 	}
 	
 	
-	private int calculateIntegral(String component, int count) {
-		int totalCost;
+	private Long calculateIntegral(String component, Long count) {
+		Long totalCost;
 		totalCost = ((PackagingItems.INTEGRAL_ITEM*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.INTEGRAL_ITEM);
 		return totalCost;
 	}
 	
-	private int calculateAccessory(String component, int count) {
-		int totalCost;
+	private Long calculateAccessory(String component, Long count) {
+		Long totalCost;
 		totalCost = ((PackagingItems.ACCESSORY*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.ACCESSORY);
 		return totalCost;
 	}

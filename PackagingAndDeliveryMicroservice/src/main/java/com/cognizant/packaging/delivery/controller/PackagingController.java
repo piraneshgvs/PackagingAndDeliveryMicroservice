@@ -17,12 +17,13 @@ public class PackagingController {
 	@Autowired
 	CalculatingService calculatingService;
 	
+	
 	@GetMapping("/GetPackagingDeliveryCharge")
-	public ResponseEntity<?> packageDelivery(@RequestParam String componentType, int count) {
-		int finalCost=0;
+	public ResponseEntity<?> packageDelivery(@RequestParam String componentType, Long count)  {
+		Long finalCost=0L;
 		if(componentType!=null&&count>0) {
 			  finalCost = calculatingService.calculateCost(componentType, count);
-			  return new ResponseEntity<Integer>(finalCost,HttpStatus.OK);
+			  return new ResponseEntity<Long>(finalCost,HttpStatus.OK);
 		}
 	    
 		return new ResponseEntity<>(GeneralConstant.EXCEPTION_MESSAGE, HttpStatus.BAD_REQUEST);
