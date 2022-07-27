@@ -12,19 +12,28 @@ public class CalculatingService {
 	
 	public int calculateCost(String component, int count) {
 		
-		int totalCost=0;
 		
 		if(component.equals("Integral")) {
-			totalCost = ((PackagingItems.INTEGRAL_ITEM*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.INTEGRAL_ITEM);
+			
+			return calculateIntegral(component, count);
 			
 		}
-		else if(component.equals("Accessory")) {
-			totalCost = ((PackagingItems.ACCESSORY*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.ACCESSORY);
-			
-		}
+					
+			return calculateAccessory(component, count);
 		
+	}
+	
+	
+	private int calculateIntegral(String component, int count) {
+		int totalCost;
+		totalCost = ((PackagingItems.INTEGRAL_ITEM*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.INTEGRAL_ITEM);
 		return totalCost;
-		
+	}
+	
+	private int calculateAccessory(String component, int count) {
+		int totalCost;
+		totalCost = ((PackagingItems.ACCESSORY*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.ACCESSORY);
+		return totalCost;
 	}
 
 }
