@@ -26,13 +26,13 @@ public class CalculatingService {
 	
 	private Long calculateIntegral(String component, Long count) {
 		Long totalCost;
-		totalCost = ((PackagingItems.INTEGRAL_ITEM*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.INTEGRAL_ITEM);
+		totalCost = (((PackagingItems.INTEGRAL_ITEM+PackagingItems.PROTECTIVE_SEATH)*count)+DeliveryItems.INTEGRAL_ITEM);
 		return totalCost;
 	}
 	
 	private Long calculateAccessory(String component, Long count) {
 		Long totalCost;
-		totalCost = ((PackagingItems.ACCESSORY*count)+PackagingItems.PROTECTIVE_SEATH+DeliveryItems.ACCESSORY);
+		totalCost = (((PackagingItems.ACCESSORY+PackagingItems.PROTECTIVE_SEATH)*count)+DeliveryItems.ACCESSORY);
 		return totalCost;
 	}
 
