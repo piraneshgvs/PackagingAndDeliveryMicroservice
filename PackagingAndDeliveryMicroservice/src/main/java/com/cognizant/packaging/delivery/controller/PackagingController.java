@@ -20,9 +20,9 @@ public class PackagingController {
 	
 	
 	@GetMapping("/GetPackagingDeliveryCharge")
-	public ResponseEntity<?> packageDelivery(@RequestParam String componentType,@RequestParam Long count)  {
+	public ResponseEntity<?> packageDelivery(@RequestParam(required=true) String componentType,@RequestParam(required=true) Long count)  {
 		Long finalCost=0L;
-		if(componentType!=null&&count>0) {
+		if(componentType.trim()!=null&&count>0) {
 			  finalCost = calculatingService.calculateCost(componentType, count);
 			  return new ResponseEntity<Long>(finalCost,HttpStatus.OK);
 		}
